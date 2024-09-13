@@ -1,0 +1,61 @@
+[project]
+name = "fluent-assertions"
+version = "0.1.3"
+description = "Fluent API for assertions supporting pytest with focus on developer experience."
+dependencies = [
+    "pytest>=8.3.2",
+]
+authors = [
+    { name = "Victor Künstler"}
+]
+readme = "README.md"
+requires-python = ">= 3.12"
+license = {file = "LICENSE"}
+keywords = ["pytest", "fluent", "fluentAPI", "assertions", "fluent assertions", "testing", "typing"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Testing",
+
+  "License :: OSI Approved :: MIT License",
+
+  "Programming Language :: Python :: 3.12",
+]
+
+[project.urls]
+Repository = "https://github.com/VictorKuenstler/fluent-assertions.git"
+Issues = "https://github.com/VictorKuenstler/fluent-assertions/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "pyright>=1.1.379",
+    "lazydocs>=0.4.8",
+    "pdoc>=14.7.0",
+    "pytest-cov>=5.0.0",
+    "pre-commit>=3.8.0",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fluent_assertions"]
+
+[tool.rye.scripts]
+devserver = { cmd = "pyright" }
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests"
+]
+
+[tool.pyright]
+venv = ".venv"
+include = ["src"]
+pythonVersion = "3.12"
+reportMissingTypeStubs = true

@@ -1,0 +1,31 @@
+name: Lint and Tests
+
+on:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install the latest version of rye
+        uses: eifinger/setup-rye@v4
+
+      - name: Sync dependencies
+        run: rye sync
+
+      - name: Check format
+        run:  rye format --check
+
+      - name: Lint source ode
+        run: rye lint
+
+      - name: Run tests
+        run: rye test

@@ -1,0 +1,34 @@
+repos:
+- repo: local
+  hooks:
+    - id: lint
+      name: rye-lint
+      entry: rye
+      args: [lint]
+      language: system
+      types: [python]
+      pass_filenames: false
+
+    - id: format
+      name: rye-format
+      entry: rye
+      language: system
+      args: [ format, --check ]
+      types: [ python ]
+      pass_filenames: false
+
+    - id: test
+      name: rye-test
+      entry: rye
+      language: system
+      args: [test]
+      types: [python]
+      pass_filenames: false
+
+    - id: pyright
+      name: pyright
+      entry: rye
+      args: [run, pyright]
+      language: system
+      types: [python]
+      pass_filenames: false
