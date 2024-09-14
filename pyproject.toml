@@ -25,6 +25,7 @@ classifiers = [
 [project.urls]
 Repository = "https://github.com/VictorKuenstler/fluent-assertions.git"
 Issues = "https://github.com/VictorKuenstler/fluent-assertions/issues"
+Documentation = "https://victorkuenstler.github.io/fluent-assertions/fluent_assertions.html"
 
 [build-system]
 requires = ["hatchling"]
