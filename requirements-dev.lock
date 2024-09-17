@@ -14,9 +14,6 @@ cfgv==3.4.0
     # via pre-commit
 click==8.1.7
     # via typer
-colorama==0.4.6
-    # via click
-    # via pytest
 coverage==7.6.1
     # via pytest-cov
 distlib==0.3.8
