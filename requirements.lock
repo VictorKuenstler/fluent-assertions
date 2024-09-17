@@ -10,8 +10,6 @@
 #   universal: false
 
 -e file:.
-colorama==0.4.6
-    # via pytest
 iniconfig==2.0.0
     # via pytest
 packaging==24.1
